@@ -21,7 +21,9 @@
                    ngModel
                    name="email"
                    required
-                   email>
+                   email
+                   #emailInput="ngModel"/>
+            <span *ngIf="!emailInput.valid && emailInput.touched">Please enter a valid email !</span>
           </div>
         </div>
         <div class="form-group">
@@ -38,7 +40,8 @@
           class="btn btn-primary"
           type="submit"
           [disabled]="!f.valid"
-        >Submit</button>
+        >Submit
+        </button>
       </form>
     </div>
   </div>
